@@ -1,0 +1,23 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <label>Name</label>
+  <input type="text" class="form-control" formControlName="name" />
+  <!-- <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+    Name is required
+  </div> -->
+
+  <label>Alter Ego</label>
+  <input type="text" class="form-control" formControlName="alterEgo" />
+
+  <label>Hero Power</label>
+  <select class="form-control" formControlName="power">
+    <option *ngFor="let pow of powers" [value]="pow">{{ pow }}</option>
+  </select>
+  <!-- <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+    Power is required
+  </div> -->
+</form>
+
+<p>Complete the form to enable button.</p>
+<button type="submit" class="btn btn-success" [disabled]="!profileForm.valid">
+  Submit
+</button>
