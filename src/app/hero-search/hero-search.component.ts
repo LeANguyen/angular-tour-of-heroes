@@ -22,6 +22,7 @@ export class HeroSearchComponent implements OnInit {
   search(term: string): void {
     this.searchTerms.next(term);
   }
+
   // searchTerms:   ---t-u-n-g
   // debounceTime:  --------------tung
   // distinctUntilChanged:

@@ -2,12 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import {
-  FormGroup,
-  FormControl,
-  FormBuilder,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-heroes',
@@ -16,40 +11,34 @@ import {
 })
 export class HeroesComponent implements OnInit, AfterViewInit {
   // Hero Form vars
-  // name: string = '';
-  profileForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(1)]),
-  });
+  addForm;
 
   // Hero List vars
   heroes: Hero[] = [];
 
   @ViewChild('newName') newName: any;
 
-  constructor(private heroService: HeroService, private fb: FormBuilder) {}
+  constructor(private heroService: HeroService, private fb: FormBuilder) {
+    this.addForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength]],
+    });
+  }
+
   ngAfterViewInit(): void {
     console.log(this.newName);
   }
 
   ngOnInit() {
     this.getHeroes();
-    // this.profileForm = this.fb.group({
-    //   name: ['', Validators.required],
-    // });
-    // this.name.valueChanges.subscribe((value) => {
-    //   console.log('value: ', value);
-    // });
-    var interval = setInterval(() => console.log('A'), 10000);
   }
 
   get name() {
-    return this.profileForm.get('name');
+    return this.addForm.get('name');
   }
 
   // Hero Form methods
   add(): void {
-    // name = name.trim();
-    if (this.profileForm.invalid) {
+    if (this.addForm.invalid) {
       return;
     }
     this.heroService

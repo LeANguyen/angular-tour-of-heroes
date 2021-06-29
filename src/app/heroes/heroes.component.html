@@ -1,5 +1,6 @@
 <h2>My Heroes</h2>
 
+<!-- Hero List -->
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{ hero.id }}">
@@ -9,14 +10,15 @@
   </li>
 </ul>
 
+<!-- Hero Form -->
 <div>
-  <form [formGroup]="profileForm">
+  <form [formGroup]="addForm">
     <label for="new-hero">Hero name: </label>
     <input id="new-hero" class="form-control" formControlName="name" required />
   </form>
 
   <!-- (click) passes input value to add() and then clears the input -->
-  <button [disabled]="!profileForm.valid" class="add-button" (click)="add()">
+  <button [disabled]="addForm.invalid" class="add-button" (click)="add()">
     Add hero
   </button>
 </div>
