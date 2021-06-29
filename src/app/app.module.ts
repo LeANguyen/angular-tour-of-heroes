@@ -26,7 +26,7 @@ import { HeroFormReactiveComponent } from './hero-form-reactive/hero-form-reacti
     DashboardComponent,
     HeroSearchComponent,
     HeroFormComponent,
-    HeroFormReactiveComponent
+    HeroFormReactiveComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +36,10 @@ import { HeroFormReactiveComponent } from './hero-form-reactive/hero-form-reacti
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false
-    })
+      dataEncapsulation: false,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

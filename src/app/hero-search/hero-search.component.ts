@@ -10,7 +10,7 @@ import { HeroService } from '../hero.service';
 @Component({
   selector: 'app-hero-search',
   templateUrl: './hero-search.component.html',
-  styleUrls: ['./hero-search.component.scss']
+  styleUrls: ['./hero-search.component.scss'],
 })
 export class HeroSearchComponent implements OnInit {
   heroes$!: Observable<Hero[]>;
@@ -22,7 +22,9 @@ export class HeroSearchComponent implements OnInit {
   search(term: string): void {
     this.searchTerms.next(term);
   }
-
+  // searchTerms:   ---t-u-n-g
+  // debounceTime:  --------------tung
+  // distinctUntilChanged:
   ngOnInit(): void {
     this.heroes$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
