@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero } from '../../models/hero';
+import { HeroService } from '../../services/hero.service';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss']
+  styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
   getHeroes(): void {
     this.heroService
       .getHeroes()
-      .subscribe(heroes => (this.heroes = heroes.slice(1, 5)));
+      .subscribe((heroes) => (this.heroes = heroes.slice(1, 5)));
   }
 }

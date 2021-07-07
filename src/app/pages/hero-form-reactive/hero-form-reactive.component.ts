@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Hero } from '../hero';
+import { Hero } from '../../models/hero';
 
 @Component({
   selector: 'app-hero-form-reactive',
