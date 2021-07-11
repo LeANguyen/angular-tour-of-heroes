@@ -17,7 +17,7 @@ import { MessagesComponent } from './pages/messages/messages.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HeroSearchComponent } from './pages/hero-search/hero-search.component';
 import { HeroFormComponent } from './pages/hero-form/hero-form.component';
-import { HeroFormReactiveComponent } from './pages/hero-form-reactive/hero-form-reactive.component';
+// import { HeroFormReactiveComponent } from './pages/hero-form-reactive/hero-form-reactive.component';
 
 import { rootReducer } from './store/reducers';
 import { APP_EFFECTS } from './store/effects';
@@ -33,7 +33,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     DashboardComponent,
     HeroSearchComponent,
     HeroFormComponent,
-    HeroFormReactiveComponent,
+    // HeroFormReactiveComponent,
   ],
   imports: [
     BrowserModule,

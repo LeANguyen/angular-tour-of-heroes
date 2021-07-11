@@ -17,3 +17,18 @@ export const selectHeroes = createSelector(
   selectFeature,
   (state) => state.filteredItems
 );
+
+export const selectLoading = createSelector(
+  selectFeature,
+  (state) => state.loading
+);
+
+export const selectHero = createSelector(
+  selectFeature,
+  (state) => state.selected
+);
+
+export const selectErrors = createSelector(
+  selectFeature,
+  (state) => state.errors
+);

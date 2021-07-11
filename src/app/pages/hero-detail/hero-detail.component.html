@@ -1,17 +1,10 @@
-<div *ngIf="hero">
-  <h2>{{ hero.name | uppercase }} Details</h2>
-  <div><span>id: </span>{{ hero.id }}</div>
-  <form [formGroup]="detailForm">
-    <label for="hero-name">Hero name: </label>
-    <input
-      id="hero-name"
-      [(ngModel)]="hero.name"
-      placeholder="name"
-      formControlName="name"
-      required
-    />
-  </form>
+<div *ngIf="hero$">
+  <h2>{{ (hero$ | async)!.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ (hero$ | async)!.id }}</div>
 </div>
-
-<button [disabled]="detailForm.invalid" (click)="save()">save</button>
-<button (click)="goBack()">go back</button>
+<form [formGroup]="heroForm">
+  <label for="hero-name">Hero name: </label>
+  <input id="hero-name" placeholder="name" formControlName="name" required />
+</form>
+<!-- <button [disabled]="detailForm.invalid" (click)="save()">save</button>
+<button (click)="goBack()">go back</button> -->
